@@ -14,6 +14,8 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(showError))
+        
         
         let urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
         
@@ -52,6 +54,15 @@ class ViewController: UITableViewController {
         let vc = DetailViewController()
         vc.detailItem = petitions[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func showError() {
+        
+        let alert = UIAlertController(title: "Source", message: "This Datas Comes From WhiteHouse API", preferredStyle: .actionSheet)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(ok)
+        present(alert, animated: true)
+        
     }
 
 
