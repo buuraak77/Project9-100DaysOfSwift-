@@ -13,6 +13,11 @@
 		65615D452875B46D008FE6DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65615D432875B46D008FE6DC /* Main.storyboard */; };
 		65615D472875B46E008FE6DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65615D462875B46E008FE6DC /* Assets.xcassets */; };
 		65615D4A2875B46E008FE6DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65615D482875B46E008FE6DC /* LaunchScreen.storyboard */; };
+		65615D522875B94E008FE6DC /* Petition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65615D512875B94E008FE6DC /* Petition.swift */; };
+		65615D542875B9CE008FE6DC /* Petitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65615D532875B9CE008FE6DC /* Petitions.swift */; };
+		65615D562875C075008FE6DC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65615D552875C075008FE6DC /* DetailViewController.swift */; };
+		656DC4942875C5DB00688AC4 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656DC4932875C5DB00688AC4 /* TopViewController.swift */; };
+		656DC4962875C76700688AC4 /* Detail2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656DC4952875C76700688AC4 /* Detail2ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		65615D462875B46E008FE6DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65615D492875B46E008FE6DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65615D4B2875B46E008FE6DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65615D512875B94E008FE6DC /* Petition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petition.swift; sourceTree = "<group>"; };
+		65615D532875B9CE008FE6DC /* Petitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petitions.swift; sourceTree = "<group>"; };
+		65615D552875C075008FE6DC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		656DC4932875C5DB00688AC4 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		656DC4952875C76700688AC4 /* Detail2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail2ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +69,11 @@
 				65615D3D2875B46D008FE6DC /* AppDelegate.swift */,
 				65615D3F2875B46D008FE6DC /* SceneDelegate.swift */,
 				65615D412875B46D008FE6DC /* ViewController.swift */,
+				656DC4932875C5DB00688AC4 /* TopViewController.swift */,
+				65615D552875C075008FE6DC /* DetailViewController.swift */,
+				656DC4952875C76700688AC4 /* Detail2ViewController.swift */,
+				65615D512875B94E008FE6DC /* Petition.swift */,
+				65615D532875B9CE008FE6DC /* Petitions.swift */,
 				65615D432875B46D008FE6DC /* Main.storyboard */,
 				65615D462875B46E008FE6DC /* Assets.xcassets */,
 				65615D482875B46E008FE6DC /* LaunchScreen.storyboard */,
@@ -139,8 +154,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				65615D422875B46D008FE6DC /* ViewController.swift in Sources */,
+				65615D522875B94E008FE6DC /* Petition.swift in Sources */,
+				656DC4962875C76700688AC4 /* Detail2ViewController.swift in Sources */,
 				65615D3E2875B46D008FE6DC /* AppDelegate.swift in Sources */,
+				65615D562875C075008FE6DC /* DetailViewController.swift in Sources */,
 				65615D402875B46D008FE6DC /* SceneDelegate.swift in Sources */,
+				65615D542875B9CE008FE6DC /* Petitions.swift in Sources */,
+				656DC4942875C5DB00688AC4 /* TopViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
