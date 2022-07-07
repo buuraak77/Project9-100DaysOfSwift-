@@ -17,11 +17,14 @@ class TopViewController: UITableViewController {
         
         let urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
         
-        if let url = URL(string: urlString) {
-            if let data = try? Data(contentsOf: url) {
-                //Parse Part
-                parse(json: data)
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            if let url = URL(string: urlString) {
+                if let data = try? Data(contentsOf: url) {
+                    //Parse Part
+                    self?.parse(json: data)
+                }
             }
+            self?.showError()
         }
         
         
@@ -32,7 +35,11 @@ class TopViewController: UITableViewController {
         
         if let jsonPetitions = try? decoder.decode(Petitions.self, from: json) {
             petitions = jsonPetitions.results
-            tableView.reloadData()
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadData()
+
+            }
         }
     }
     
@@ -53,6 +60,16 @@ class TopViewController: UITableViewController {
         let vc = Detail2ViewController()
         vc.detailItem = petitions[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func showError() {
+        
+        DispatchQueue.main.async { [weak self] in
+            let ac = UIAlertController(title: "Error", message: "Error", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self?.present(ac, animated: true)
+        }
+        
     }
 
 

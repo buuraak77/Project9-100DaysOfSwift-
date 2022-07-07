@@ -19,12 +19,17 @@ class ViewController: UITableViewController {
         
         let urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
         
-        if let url = URL(string: urlString) {
-            if let data = try? Data(contentsOf: url) {
-                //Parse Part
-                parse(json: data)
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            if let url = URL(string: urlString) {
+                if let data = try? Data(contentsOf: url) {
+                    //Parse Part
+                    self?.parse(json: data)
+                }
             }
+            self?.showError()
         }
+        
+        
         
         
     }
@@ -34,7 +39,11 @@ class ViewController: UITableViewController {
         
         if let jsonPetitions = try? decoder.decode(Petitions.self, from: json) {
             petitions = jsonPetitions.results
-            tableView.reloadData()
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadData()
+
+            }
         }
     }
     
@@ -57,11 +66,13 @@ class ViewController: UITableViewController {
     }
     
     @objc func showError() {
-        
-        let alert = UIAlertController(title: "Source", message: "This Datas Comes From WhiteHouse API", preferredStyle: .actionSheet)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(ok)
-        present(alert, animated: true)
+        DispatchQueue.main.async { [weak self] in
+            let alert = UIAlertController(title: "Source", message: "This Datas Comes From WhiteHouse API", preferredStyle: .actionSheet)
+            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(ok)
+            self?.present(alert, animated: true)
+        }
+            
         
     }
 
